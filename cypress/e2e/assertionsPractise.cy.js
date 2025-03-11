@@ -8,8 +8,8 @@ describe("practise assertions in cypress", () => {
         // assertion (AND, Should)
 
         cy.url().should('include', 'saucedemo');
-        cy.url().should('eq', 'https://www.saucedemo.com/')
-        cy.url().should('contain', 'com')
+        cy.url().should('eq', 'https://www.saucedemo.com/');
+        cy.url().should('contain', 'com');
 
     })
 

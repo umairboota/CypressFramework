@@ -13,6 +13,4 @@ describe("practise assertions in cypress", () => {
 
     })
 
-
-
 })

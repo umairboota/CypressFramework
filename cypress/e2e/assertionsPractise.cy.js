@@ -11,6 +11,13 @@ describe("practise assertions in cypress", () => {
         cy.url().should('eq', 'https://www.saucedemo.com/');
         cy.url().should('contain', 'com');
 
+
+    })
+    it("implicit Assertion for the page", () => {
+        cy.visit("/");
+
+        cy.get('.login_logo').should('contain', 'Swag Labs')
+
     })
 
 })

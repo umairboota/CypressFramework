@@ -3,7 +3,7 @@ on: [push, pull_request]
 
 jobs:
   cypress-run:
-    runs-on: windows
+    runs-on: windows-latest  # ✅ Use the correct label for Windows
 
     steps:
       - name: Checkout Repository
@@ -12,10 +12,13 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '22'
+          node-version: '18'  # ✅ Cypress works best with Node 18 (Node 22 is too new for now)
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci  # ✅ Cleaner install for CI
+
+      - name: Verify Cypress Installation
+        run: npx cypress verify  # ✅ Ensures binary is downloaded and working
 
       - name: Run Cypress Tests
-        run: npm run cypress:run  # This calls the script you define in package.json
+        run: npx cypress run  # ✅ More reliable than npm run in CI for Cypress

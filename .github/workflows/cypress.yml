@@ -12,10 +12,10 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '22'  # You can use the appropriate Node version
+          node-version: '22'
 
       - name: Install Dependencies
         run: npm install
 
       - name: Run Cypress Tests
-        run: npx run cypress:run  # This calls the script you define in package.json
+        run: npm run cypress:run  # This calls the script you define in package.json
